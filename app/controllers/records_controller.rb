@@ -4,6 +4,7 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
+    version_info
     @records = Record.all
   end
 
@@ -62,6 +63,15 @@ class RecordsController < ApplicationController
   end
 
   private
+    def version_info
+      if Record.any?
+        @version_count = Record.uniq.pluck(:version).count
+        @latestversion = Record.uniq.order("version DESC").first.version
+      else
+        @version_count = 0
+        @latestversion = 0
+      end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_record
       @record = Record.find(params[:id])
