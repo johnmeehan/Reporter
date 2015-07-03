@@ -6,202 +6,202 @@
         - @record.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .form-group.field
     = f.label :version
     = f.number_field :version
-  .field
+  .form-group.field
     = f.label :current_holding
     = f.text_field :current_holding
-  .field
+  .form-group.field
     = f.label :previous_holding
     = f.text_field :previous_holding
-  .field
+  .form-group.field
     = f.label :market_value
     = f.text_field :market_value
-  .field
+  .form-group.field
     = f.label :previous_market_value
     = f.text_field :previous_market_value
-  .field
+  .form-group.field
     = f.label :pct_held
     = f.text_field :pct_held
-  .field
+  .form-group.field
     = f.label :pct_portfolio
     = f.text_field :pct_portfolio
-  .field
+  .form-group.field
     = f.label :market_capitalization
     = f.text_field :market_capitalization
-  .field
+  .form-group.field
     = f.label :q0_holding
     = f.number_field :q0_holding
-  .field
+  .form-group.field
     = f.label :q0_quarter
     = f.datetime_select :q0_quarter
-  .field
+  .form-group.field
     = f.label :q0_source
     = f.text_field :q0_source
-  .field
+  .form-group.field
     = f.label :q1_holding
     = f.number_field :q1_holding
-  .field
+  .form-group.field
     = f.label :q1_quarter
     = f.datetime_select :q1_quarter
-  .field
+  .form-group.field
     = f.label :q1_source
     = f.text_field :q1_source
-  .field
+  .form-group.field
     = f.label :q2_holding
     = f.number_field :q2_holding
-  .field
+  .form-group.field
     = f.label :q2_quarter
     = f.datetime_select :q2_quarter
-  .field
+  .form-group.field
     = f.label :q2_source
     = f.text_field :q2_source
-  .field
+  .form-group.field
     = f.label :q3_holding
     = f.number_field :q3_holding
-  .field
+  .form-group.field
     = f.label :q3_quarter
     = f.datetime_select :q3_quarter
-  .field
+  .form-group.field
     = f.label :q3_source
     = f.text_field :q3_source
-  .field
+  .form-group.field
     = f.label :q4_holding
     = f.number_field :q4_holding
-  .field
+  .form-group.field
     = f.label :q4_quarter
     = f.datetime_select :q4_quarter
-  .field
+  .form-group.field
     = f.label :q4_source
     = f.text_field :q4_source
-  .field
+  .form-group.field
     = f.label :q5_holding
     = f.number_field :q5_holding
-  .field
+  .form-group.field
     = f.label :q5_quarter
     = f.datetime_select :q5_quarter
-  .field
+  .form-group.field
     = f.label :q5_source
     = f.text_field :q5_source
-  .field
+  .form-group.field
     = f.label :q6_holding
     = f.number_field :q6_holding
-  .field
+  .form-group.field
     = f.label :q6_quarter
     = f.datetime_select :q6_quarter
-  .field
+  .form-group.field
     = f.label :q6_source
     = f.text_field :q6_source
-  .field
+  .form-group.field
     = f.label :q7_holding
     = f.number_field :q7_holding
-  .field
+  .form-group.field
     = f.label :q7_quarter
     = f.datetime_select :q7_quarter
-  .field
+  .form-group.field
     = f.label :q7_source
     = f.text_field :q7_source
-  .field
+  .form-group.field
     = f.label :q8_holding
     = f.number_field :q8_holding
-  .field
+  .form-group.field
     = f.label :q8_quarter
     = f.datetime_select :q8_quarter
-  .field
+  .form-group.field
     = f.label :q8_source
     = f.text_field :q8_source
-  .field
+  .form-group.field
     = f.label :p0_price
     = f.text_field :p0_price
-  .field
+  .form-group.field
     = f.label :p1_price
     = f.text_field :p1_price
-  .field
+  .form-group.field
     = f.label :p4_price
     = f.text_field :p4_price
-  .field
+  .form-group.field
     = f.label :metro_area
     = f.text_field :metro_area
-  .field
+  .form-group.field
     = f.label :firm_name
     = f.text_field :firm_name
-  .field
+  .form-group.field
     = f.label :company_name
     = f.text_field :company_name
-  .field
+  .form-group.field
     = f.label :ticker
     = f.text_field :ticker
-  .field
+  .form-group.field
     = f.label :q0_market_value
     = f.text_field :q0_market_value
-  .field
+  .form-group.field
     = f.label :qoq_net_change_flow
     = f.number_field :qoq_net_change_flow
-  .field
+  .form-group.field
     = f.label :yoy_net_change_flow
     = f.number_field :yoy_net_change_flow
-  .field
+  .form-group.field
     = f.label :qoq_inflow
     = f.number_field :qoq_inflow
-  .field
+  .form-group.field
     = f.label :qoq_outflow
     = f.number_field :qoq_outflow
-  .field
+  .form-group.field
     = f.label :yoy_inflow
     = f.number_field :yoy_inflow
-  .field
+  .form-group.field
     = f.label :yoy_outflow
     = f.number_field :yoy_outflow
-  .field
+  .form-group.field
     = f.label :qoq_new_positions
     = f.number_field :qoq_new_positions
-  .field
+  .form-group.field
     = f.label :qoq_soldout_positions
     = f.number_field :qoq_soldout_positions
-  .field
+  .form-group.field
     = f.label :qoq_increased_positions
     = f.number_field :qoq_increased_positions
-  .field
+  .form-group.field
     = f.label :qoq_decreased_positions
     = f.number_field :qoq_decreased_positions
-  .field
+  .form-group.field
     = f.label :qoq_net_position_change
     = f.number_field :qoq_net_position_change
-  .field
+  .form-group.field
     = f.label :yoy_new_positions
     = f.number_field :yoy_new_positions
-  .field
+  .form-group.field
     = f.label :yoy_soldout_positions
     = f.number_field :yoy_soldout_positions
-  .field
+  .form-group.field
     = f.label :yoy_increased_positions
     = f.number_field :yoy_increased_positions
-  .field
+  .form-group.field
     = f.label :yoy_decreased_positions
     = f.number_field :yoy_decreased_positions
-  .field
+  .form-group.field
     = f.label :yoy_net_position_change
     = f.number_field :yoy_net_position_change
-  .field
+  .form-group.field
     = f.label :new_positions
     = f.number_field :new_positions
-  .field
+  .form-group.field
     = f.label :soldout_positions
     = f.number_field :soldout_positions
-  .field
+  .form-group.field
     = f.label :increased_positions
     = f.number_field :increased_positions
-  .field
+  .form-group.field
     = f.label :decreased_positions
     = f.number_field :decreased_positions
-  .field
+  .form-group.field
     = f.label :net_position_change
     = f.number_field :net_position_change
-  .field
+  .form-group.field
     = f.label :factset_security_id
     = f.number_field :factset_security_id
-  .field
+  .form-group.field
     = f.label :factset_entity_id
     = f.number_field :factset_entity_id
   .actions
