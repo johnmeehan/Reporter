@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703103413) do
+ActiveRecord::Schema.define(version: 20150703125356) do
 
   create_table "records", force: :cascade do |t|
     t.integer  "version"
-    t.integer  "current_holding"
-    t.integer  "previous_holding"
+    t.integer  "current_holdings"
+    t.integer  "previous_holdings"
     t.decimal  "market_value"
     t.decimal  "previous_market_value"
     t.decimal  "pct_held"

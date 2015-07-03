@@ -5,9 +5,10 @@ Rake Task:   `rake parse_csv`
 
 
 == Assumptions!!
-  1. input file for parsing is placed in /lib/input/input.csv
+  1. Input file for parsing is placed in /lib/input/input.csv
   2. A new file replaces input.csv
   3. Cron Job runs the rake task every ........
+  4. ES not used for persistance.
 
 
 

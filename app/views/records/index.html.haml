@@ -4,8 +4,8 @@
   %thead
     %tr
       %th Version
-      %th Current holding
-      %th Previous holding
+      %th Current holdings
+      %th Previous holdings
       %th Market value
       %th Previous market value
       %th Pct held
@@ -77,8 +77,8 @@
     - @records.each do |record|
       %tr
         %td= record.version
-        %td= record.current_holding
-        %td= record.previous_holding
+        %td= record.current_holdings
+        %td= record.previous_holdings
         %td= record.market_value
         %td= record.previous_market_value
         %td= record.pct_held

@@ -4,8 +4,8 @@
 #
 #  id                      :integer          not null, primary key
 #  version                 :integer
-#  current_holding         :integer
-#  previous_holding        :integer
+#  current_holdings        :integer
+#  previous_holdings       :integer
 #  market_value            :decimal(, )
 #  previous_market_value   :decimal(, )
 #  pct_held                :decimal(, )
