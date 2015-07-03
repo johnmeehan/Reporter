@@ -1,0 +1,204 @@
+%p#notice= notice
+
+%p
+  %b Version:
+  = @record.version
+%p
+  %b Current holding:
+  = @record.current_holding
+%p
+  %b Previous holding:
+  = @record.previous_holding
+%p
+  %b Market value:
+  = @record.market_value
+%p
+  %b Previous market value:
+  = @record.previous_market_value
+%p
+  %b Pct held:
+  = @record.pct_held
+%p
+  %b Pct portfolio:
+  = @record.pct_portfolio
+%p
+  %b Market capitalization:
+  = @record.market_capitalization
+%p
+  %b Q0 holding:
+  = @record.q0_holding
+%p
+  %b Q0 quarter:
+  = @record.q0_quarter
+%p
+  %b Q0 source:
+  = @record.q0_source
+%p
+  %b Q1 holding:
+  = @record.q1_holding
+%p
+  %b Q1 quarter:
+  = @record.q1_quarter
+%p
+  %b Q1 source:
+  = @record.q1_source
+%p
+  %b Q2 holding:
+  = @record.q2_holding
+%p
+  %b Q2 quarter:
+  = @record.q2_quarter
+%p
+  %b Q2 source:
+  = @record.q2_source
+%p
+  %b Q3 holding:
+  = @record.q3_holding
+%p
+  %b Q3 quarter:
+  = @record.q3_quarter
+%p
+  %b Q3 source:
+  = @record.q3_source
+%p
+  %b Q4 holding:
+  = @record.q4_holding
+%p
+  %b Q4 quarter:
+  = @record.q4_quarter
+%p
+  %b Q4 source:
+  = @record.q4_source
+%p
+  %b Q5 holding:
+  = @record.q5_holding
+%p
+  %b Q5 quarter:
+  = @record.q5_quarter
+%p
+  %b Q5 source:
+  = @record.q5_source
+%p
+  %b Q6 holding:
+  = @record.q6_holding
+%p
+  %b Q6 quarter:
+  = @record.q6_quarter
+%p
+  %b Q6 source:
+  = @record.q6_source
+%p
+  %b Q7 holding:
+  = @record.q7_holding
+%p
+  %b Q7 quarter:
+  = @record.q7_quarter
+%p
+  %b Q7 source:
+  = @record.q7_source
+%p
+  %b Q8 holding:
+  = @record.q8_holding
+%p
+  %b Q8 quarter:
+  = @record.q8_quarter
+%p
+  %b Q8 source:
+  = @record.q8_source
+%p
+  %b P0 price:
+  = @record.p0_price
+%p
+  %b P1 price:
+  = @record.p1_price
+%p
+  %b P4 price:
+  = @record.p4_price
+%p
+  %b Metro area:
+  = @record.metro_area
+%p
+  %b Firm name:
+  = @record.firm_name
+%p
+  %b Company name:
+  = @record.company_name
+%p
+  %b Ticker:
+  = @record.ticker
+%p
+  %b Q0 market value:
+  = @record.q0_market_value
+%p
+  %b Qoq net change flow:
+  = @record.qoq_net_change_flow
+%p
+  %b Yoy net change flow:
+  = @record.yoy_net_change_flow
+%p
+  %b Qoq inflow:
+  = @record.qoq_inflow
+%p
+  %b Qoq outflow:
+  = @record.qoq_outflow
+%p
+  %b Yoy inflow:
+  = @record.yoy_inflow
+%p
+  %b Yoy outflow:
+  = @record.yoy_outflow
+%p
+  %b Qoq new positions:
+  = @record.qoq_new_positions
+%p
+  %b Qoq soldout positions:
+  = @record.qoq_soldout_positions
+%p
+  %b Qoq increased positions:
+  = @record.qoq_increased_positions
+%p
+  %b Qoq decreased positions:
+  = @record.qoq_decreased_positions
+%p
+  %b Qoq net position change:
+  = @record.qoq_net_position_change
+%p
+  %b Yoy new positions:
+  = @record.yoy_new_positions
+%p
+  %b Yoy soldout positions:
+  = @record.yoy_soldout_positions
+%p
+  %b Yoy increased positions:
+  = @record.yoy_increased_positions
+%p
+  %b Yoy decreased positions:
+  = @record.yoy_decreased_positions
+%p
+  %b Yoy net position change:
+  = @record.yoy_net_position_change
+%p
+  %b New positions:
+  = @record.new_positions
+%p
+  %b Soldout positions:
+  = @record.soldout_positions
+%p
+  %b Increased positions:
+  = @record.increased_positions
+%p
+  %b Decreased positions:
+  = @record.decreased_positions
+%p
+  %b Net position change:
+  = @record.net_position_change
+%p
+  %b Factset security:
+  = @record.factset_security_id
+%p
+  %b Factset entity:
+  = @record.factset_entity_id
+
+= link_to 'Edit', edit_record_path(@record)
+\|
+= link_to 'Back', records_path
