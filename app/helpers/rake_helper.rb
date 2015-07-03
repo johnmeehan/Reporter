@@ -70,30 +70,4 @@ module RakeHelper
       factset_entity_id: row[66]
     }
   end
-  def create_params(row)
-      { current_holdings: row[2].to_i,
-      previous_holdings: row[3].to_i,
-      market_value: row[4].to_f,
-      previous_market_value: row[5].to_f,
-      pct_held: row[6].to_f,
-      pct_portfolio: row[7],
-      market_capitalization: row[8],
-      metro_area: row[39],
-      firm_name: row[40],
-      company_name: row[41],
-      ticker: row[42],
-      yoy_new_positions: row[55].to_i,
-      yoy_soldout_positions: row[56].to_i,
-      yoy_increased_positions: row[57].to_i,
-      yoy_decreased_positions: row[58].to_i,
-      yoy_net_position_change: row[59].to_i,
-      new_positions: row[60].to_i,
-      soldout_positions: row[61].to_i,
-      increased_positions: row[62].to_i,
-      decreased_positions: row[63].to_i,
-      net_position_change: row[64].to_i,
-      factset_security_id: row[65].to_i,
-      factset_entity_id: row[66].to_i
-      }
-  end
 end

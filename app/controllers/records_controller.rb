@@ -6,6 +6,7 @@ class RecordsController < ApplicationController
   def index
     version_info
     @records = Record.all
+    # @records = Record.search()
   end
 
   # GET /records/1

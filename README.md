@@ -1,10 +1,26 @@
-== Reporter
+# Reporter
+John Meehan 
 
-To import from CSV
+
+## Cron Job (set to run every 2 hours)
+To view the cron job set up in config/schedule.rb
+run `whenever`
+
+To write it to crontab
+run `whenever -w`
+
+To view it
+`crontab -e`
+
+
+## To import from CSV via rake task
 Rake Task:   `rake parse_csv`
 
+## Password
+Password: `password`
 
-== Assumptions!!
+
+### Assumptions!!
   1. Input file for parsing is placed in /lib/input/input.csv
   2. A new file replaces input.csv
   3. Cron Job runs the rake task every 2 hours.  (see /config/schedule.rb)
@@ -12,7 +28,7 @@ Rake Task:   `rake parse_csv`
 
 
 
-== Task
+# Task
 
 Write a script that will create a cron job run a rake task that:
   a) Parses the provided csv file.
