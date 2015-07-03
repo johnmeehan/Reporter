@@ -1,5 +1,5 @@
 # Reporter
-John Meehan 
+John Meehan
 
 
 ## Cron Job (set to run every 2 hours)
@@ -7,6 +7,9 @@ To view the cron job set up in config/schedule.rb
 run `whenever`
 
 To write it to crontab
+
+run `rake cronjob`
+*OR*
 run `whenever -w`
 
 To view it
@@ -14,7 +17,7 @@ To view it
 
 
 ## To import from CSV via rake task
-Rake Task:   `rake parse_csv`
+Rake Task:  `rake parse_csv`
 
 ## Password
 Password: `password`
