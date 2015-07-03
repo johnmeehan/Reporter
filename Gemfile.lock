@@ -321,6 +321,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
+  pry
   puma
   rails (= 4.2.3)
   rspec-rails
