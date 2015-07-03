@@ -5,8 +5,9 @@ class RecordsController < ApplicationController
   # GET /records.json
   def index
     version_info
-    @records = Record.all
-    # @records = Record.search()
+    # @records = Record.all
+    @records = Record.page(params[:page]).per(20)
+    # @records = Record.search(version: @latestversion)
   end
 
   # GET /records/1

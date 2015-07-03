@@ -7,7 +7,7 @@
   Latest Version:
   =@latestversion if @latestversion
 
-%table.table.table-striped.table-hover.table-condended
+%table.table.table-striped.table-hover.table-condended.table-bordered
   %thead
     %tr
       %th Version
@@ -81,6 +81,7 @@
       %th
 
   %tbody
+    = paginate @records
     - @records.each do |record|
       %tr
         %td= record.version
@@ -154,5 +155,5 @@
         %td= link_to 'Destroy', record, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
-
+= paginate @records
 = link_to 'New Record', new_record_path
