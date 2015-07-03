@@ -1,28 +1,22 @@
 == README
+Write a script that will create a cron job run a rake task that:
+  a) Parses the provided csv file.
+  b) Creates a database record for the row.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Each record should be editable within the rails app.
+Each update of the record should create a new record with a new version.
 
-Things you may want to cover:
+Each record should know how to update ElasticSearch with its data.
 
-* Ruby version
+Create page that displays a table of the information, sortable by each column header. This table should only display the most recent version of each record.
 
-* System dependencies
+All data for the table should be pulled directly from ElasticSearch.
+The table should be paginated to twenty rows per page.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Create another page with basic authentication.
+This page should allow the user to set what columns display in the table based on the fields available in ElasticSearch.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+All times in the csv are in UTC, they should display in Mountain Time and the format:
+
+December 2, 1986
