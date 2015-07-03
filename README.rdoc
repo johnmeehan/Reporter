@@ -1,4 +1,18 @@
-== README
+== Reporter
+
+To import from CSV
+Rake Task:   `rake parse_csv`
+
+
+== Assumptions!!
+  1. input file for parsing is placed in /lib/input/input.csv
+  2. A new file replaces input.csv
+  3. Cron Job runs the rake task every ........
+
+
+
+== Task
+
 Write a script that will create a cron job run a rake task that:
   a) Parses the provided csv file.
   b) Creates a database record for the row.
