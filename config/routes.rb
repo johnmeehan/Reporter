@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin/index'
+
   resources :records
   root 'records#index'
   # The priority is based upon order of creation: first created -> highest priority.

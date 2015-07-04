@@ -1,17 +1,7 @@
-.container
-  .row
-    %h1 Reporter - Records
+%h4.text-center
+  = paginate @records
 
-    %h4
-      =@version_count if @version_count
-      Versions
-      %br
-      Latest Version:
-      =@latestversion if @latestversion
-      %br
-      = paginate @records
-
-      -# = session[:visible].inspect
+-# = session[:visible].inspect
 
 %table.table.table-striped.table-hover.table-condended.table-bordered
   %thead
