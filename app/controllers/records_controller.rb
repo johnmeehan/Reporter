@@ -6,7 +6,13 @@ class RecordsController < ApplicationController
     # Only Show recent versions and paginate
     @records = Record.where(version: @latestversion).page(params[:page]).per(20)
     # @records = Record.search(version: @latestversion)
+    # @records = Record.search(version: @latestversion).records.page(params[:page]).per(20)
+    # @records = Record.search( version: @latestversion).page(params[:page]).records
+    # @records = Record.search(params[:q]).page(params[:page]).records
+    # @records = Record.search(version: @latestversion).page(params[:page]).records
+    # @records = response
   end
+
 
   def show
   end

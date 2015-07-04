@@ -46,11 +46,11 @@ group :development, :test do
   gem 'spring'
 end
 
-
+gem 'kaminari'
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'whenever', require: false
-gem 'kaminari'
+
 gem 'puma', group: :production
 gem 'haml'
 gem 'haml-rails'

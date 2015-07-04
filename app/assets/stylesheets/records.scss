@@ -1,3 +1,19 @@
 // Place all the styles related to the Records controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.label-highlight {
+  font-size: 100% !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  color: #333 !important;
+  background: #fff401 !important;
+}
+
+nav.pagination {
+  text-align: center;
+  display: block;
+}
+
+nav.pagination ul {
+  display: inline-block;
+}
