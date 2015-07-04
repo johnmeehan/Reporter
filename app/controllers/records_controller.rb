@@ -3,10 +3,12 @@ class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update, :destroy]
 
   def index
+    set_visabilty
+    get_columns
     version_info
     # Only Show recent versions and paginate
-    @records = Record.where(version: @latestversion).
-        order(sort_column + ' ' + sort_direction )
+    @records = Record.where(version: @latestversion)
+        .order(sort_column + ' ' + sort_direction )
         .page(params[:page]).per(20)
     # @records = Record.search(version: @latestversion)
     # @records = Record.search(version: @latestversion).records.page(params[:page]).per(20)
@@ -80,5 +82,20 @@ class RecordsController < ApplicationController
 
     def sort_direction
       %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+    end
+
+    def set_visabilty
+      unless session[:visible]
+        session[:visible]||= {}
+        get_columns.each do |col|
+          session[:visible][col.to_sym] = true
+        end
+        # session[:visible].except!(:created_at, :updated_at, :id)
+      end
+    end
+
+    def get_columns
+      # @columns = Record.columns_hash.except!(:created_at, :updated_at, :id)
+      @columns = Record.column_names.reject { |x| ['created_at', 'updated_at', 'id'].include? x}
     end
 end

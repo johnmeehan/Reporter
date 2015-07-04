@@ -11,148 +11,92 @@
       %br
       = paginate @records
 
+      -# = session[:visible].inspect
+
 %table.table.table-striped.table-hover.table-condended.table-bordered
   %thead
     %tr
-      %th= sortable "Version"
-      %th= sortable "Current holdings"
-      %th= sortable "Previous holdings"
-      %th= sortable "Market value"
-      %th= sortable "Previous market value"
-      %th= sortable "Pct held"
-      %th= sortable "Pct portfolio"
-      %th= sortable "Market capitalization"
-      %th= sortable "Q0 holding"
-      %th= sortable "Q0 quarter"
-      %th= sortable "Q0 source"
-      %th= sortable "Q1 holding"
-      %th= sortable "Q1 quarter"
-      %th= sortable "Q1 source"
-      %th= sortable "Q2 holding"
-      %th= sortable "Q2 quarter"
-      %th= sortable "Q2 source"
-      %th= sortable "Q3 holding"
-      %th= sortable "Q3 quarter"
-      %th= sortable "Q3 source"
-      %th= sortable "Q4 holding"
-      %th= sortable "Q4 quarter"
-      %th= sortable "Q4 source"
-      %th= sortable "Q5 holding"
-      %th= sortable "Q5 quarter"
-      %th= sortable "Q5 source"
-      %th= sortable "Q6 holding"
-      %th= sortable "Q6 quarter"
-      %th= sortable "Q6 source"
-      %th= sortable "Q7 holding"
-      %th= sortable "Q7 quarter"
-      %th= sortable "Q7 source"
-      %th= sortable "Q8 holding"
-      %th= sortable "Q8 quarter"
-      %th= sortable "Q8 source"
-      %th= sortable "P0 price"
-      %th= sortable "P1 price"
-      %th= sortable "P4 price"
-      %th= sortable "Metro area"
-      %th= sortable "Firm name"
-      %th= sortable "Company name"
-      %th= sortable "Ticker"
-      %th= sortable "Q0 market value"
-      %th= sortable "Qoq net change flow"
-      %th= sortable "Yoy net change flow"
-      %th= sortable "Qoq inflow"
-      %th= sortable "Qoq outflow"
-      %th= sortable "Yoy inflow"
-      %th= sortable "Yoy outflow"
-      %th= sortable "Qoq new positions"
-      %th= sortable "Qoq soldout positions"
-      %th= sortable "Qoq increased positions"
-      %th= sortable "Qoq decreased positions"
-      %th= sortable "Qoq net position change"
-      %th= sortable "Yoy new positions"
-      %th= sortable "Yoy soldout positions"
-      %th= sortable "Yoy increased positions"
-      %th= sortable "Yoy decreased positions"
-      %th= sortable "Yoy net position change"
-      %th= sortable "New positions"
-      %th= sortable "Soldout positions"
-      %th= sortable "Increased positions"
-      %th= sortable "Decreased positions"
-      %th= sortable "Net position change"
-      %th= sortable "Factset security"
-      %th= sortable "Factset entity"
-      %th
-      %th
-      %th
+    - @columns.each do |column|
+      %th= sortable column if session[:visible][column] == true
+    %th
+    %th
+    %th
 
   %tbody
     - @records.each do |record|
       %tr
-        %td= record.version
-        %td= record.current_holdings
-        %td= record.previous_holdings
-        %td= record.market_value
-        %td= record.previous_market_value
-        %td= record.pct_held
-        %td= record.pct_portfolio
-        %td= record.market_capitalization
-        %td= record.q0_holding
-        %td= display_date record.q0_quarter
-        %td= record.q0_source
-        %td= record.q1_holding
-        %td= display_date record.q1_quarter
-        %td= record.q1_source
-        %td= record.q2_holding
-        %td= display_date record.q2_quarter
-        %td= record.q2_source
-        %td= record.q3_holding
-        %td= display_date record.q3_quarter
-        %td= record.q3_source
-        %td= record.q4_holding
-        %td= display_date record.q4_quarter
-        %td= record.q4_source
-        %td= record.q5_holding
-        %td= display_date record.q5_quarter
-        %td= record.q5_source
-        %td= record.q6_holding
-        %td= display_date record.q6_quarter
-        %td= record.q6_source
-        %td= record.q7_holding
-        %td= display_date(record.q7_quarter)
-        %td= record.q7_source
-        %td= record.q8_holding
-        %td= display_date record.q8_quarter
-        %td= record.q8_source
-        %td= record.p0_price
-        %td= record.p1_price
-        %td= record.p4_price
-        %td= record.metro_area
-        %td= record.firm_name
-        %td= record.company_name
-        %td= record.ticker
-        %td= record.q0_market_value
-        %td= record.qoq_net_change_flow
-        %td= record.yoy_net_change_flow
-        %td= record.qoq_inflow
-        %td= record.qoq_outflow
-        %td= record.yoy_inflow
-        %td= record.yoy_outflow
-        %td= record.qoq_new_positions
-        %td= record.qoq_soldout_positions
-        %td= record.qoq_increased_positions
-        %td= record.qoq_decreased_positions
-        %td= record.qoq_net_position_change
-        %td= record.yoy_new_positions
-        %td= record.yoy_soldout_positions
-        %td= record.yoy_increased_positions
-        %td= record.yoy_decreased_positions
-        %td= record.yoy_net_position_change
-        %td= record.new_positions
-        %td= record.soldout_positions
-        %td= record.increased_positions
-        %td= record.decreased_positions
-        %td= record.net_position_change
-        %td= record.factset_security_id
-        %td= record.factset_entity_id
+        - @columns.each do |row_column|
+          -unless session[:visible][row_column] == false
+            %td= display_as record.send(row_column)
+            -# -else
+            -#   %td= record.send(row_column)
+
+        -# %td= record.version
+        -# %td= record.current_holdings
+        -# %td= record.previous_holdings
+        -# %td= record.market_value
+        -# %td= record.previous_market_value
+        -# %td= record.pct_held
+        -# %td= record.pct_portfolio
+        -# %td= record.market_capitalization
+        -# %td= record.q0_holding
+        -# %td= display_date record.q0_quarter
+        -# %td= record.q0_source
+        -# %td= record.q1_holding
+        -# %td= display_date record.q1_quarter
+        -# %td= record.q1_source
+        -# %td= record.q2_holding
+        -# %td= display_date record.q2_quarter
+        -# %td= record.q2_source
+        -# %td= record.q3_holding
+        -# %td= display_date record.q3_quarter
+        -# %td= record.q3_source
+        -# %td= record.q4_holding
+        -# %td= display_date record.q4_quarter
+        -# %td= record.q4_source
+        -# %td= record.q5_holding
+        -# %td= display_date record.q5_quarter
+        -# %td= record.q5_source
+        -# %td= record.q6_holding
+        -# %td= display_date record.q6_quarter
+        -# %td= record.q6_source
+        -# %td= record.q7_holding
+        -# %td= display_date(record.q7_quarter)
+        -# %td= record.q7_source
+        -# %td= record.q8_holding
+        -# %td= display_date record.q8_quarter
+        -# %td= record.q8_source
+        -# %td= record.p0_price
+        -# %td= record.p1_price
+        -# %td= record.p4_price
+        -# %td= record.metro_area
+        -# %td= record.firm_name
+        -# %td= record.company_name
+        -# %td= record.ticker
+        -# %td= record.q0_market_value
+        -# %td= record.qoq_net_change_flow
+        -# %td= record.yoy_net_change_flow
+        -# %td= record.qoq_inflow
+        -# %td= record.qoq_outflow
+        -# %td= record.yoy_inflow
+        -# %td= record.yoy_outflow
+        -# %td= record.qoq_new_positions
+        -# %td= record.qoq_soldout_positions
+        -# %td= record.qoq_increased_positions
+        -# %td= record.qoq_decreased_positions
+        -# %td= record.qoq_net_position_change
+        -# %td= record.yoy_new_positions
+        -# %td= record.yoy_soldout_positions
+        -# %td= record.yoy_increased_positions
+        -# %td= record.yoy_decreased_positions
+        -# %td= record.yoy_net_position_change
+        -# %td= record.new_positions
+        -# %td= record.soldout_positions
+        -# %td= record.increased_positions
+        -# %td= record.decreased_positions
+        -# %td= record.net_position_change
+        -# %td= record.factset_security_id
+        -# %td= record.factset_entity_id
         %td= link_to 'Show', record
         %td= link_to 'Edit', edit_record_path(record)
         %td= link_to 'Destroy', record, :method => :delete, :data => { :confirm => 'Are you sure?' }
@@ -165,4 +109,4 @@
 
       = link_to 'New Record', new_record_path, class: 'btn btn-primary'
 
-      %p John Meehan 
+      %p John Meehan

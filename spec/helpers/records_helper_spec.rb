@@ -11,11 +11,14 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe RecordsHelper, type: :helper do
-  describe 'display_date' do
-    it 'displays the date in Month Day, Year' do
+  describe 'display_as' do
+    it 'displays a string that looks like a date as Month Day, Year' do
       datetime = DateTime.new(2007, 12, 4, 0, 0, 0, 0)
-      expect(display_date(datetime)).to eq 'December 04, 2007'
+      expect(display_as(datetime)).to eq 'December 04, 2007'
     end
-
+    it 'displays a string as just a string' do
+      could_be_a_string_but_its_not = 'John Meehan'
+      expect(display_as(could_be_a_string_but_its_not)).to eq 'John Meehan'
+    end
   end
 end
