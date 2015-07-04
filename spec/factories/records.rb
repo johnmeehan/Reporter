@@ -76,8 +76,8 @@
 FactoryGirl.define do
   factory :record do
     version 1
-    current_holding ""
-    previous_holding ""
+    current_holdings ""
+    previous_holdings ""
     market_value "9.99"
     previous_market_value "9.99"
     pct_held "9.99"

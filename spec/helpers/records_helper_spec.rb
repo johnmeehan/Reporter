@@ -11,5 +11,11 @@ require 'rails_helper'
 #   end
 # end
 RSpec.describe RecordsHelper, type: :helper do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'display_date' do
+    it 'displays the date in Month Day, Year' do
+      datetime = DateTime.new(2007, 12, 4, 0, 0, 0, 0)
+      expect(display_date(datetime)).to eq 'December 04, 2007'
+    end
+
+  end
 end
