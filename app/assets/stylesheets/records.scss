@@ -17,3 +17,18 @@ nav.pagination {
 nav.pagination ul {
   display: inline-block;
 }
+
+
+th a.current {
+  padding-right: 20px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+th a.current.asc {
+  background-color: grey;
+}
+
+th a.current.desc {
+  background-color: green;
+}

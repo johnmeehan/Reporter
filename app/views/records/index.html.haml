@@ -14,72 +14,72 @@
 %table.table.table-striped.table-hover.table-condended.table-bordered
   %thead
     %tr
-      %th Version
-      %th Current holdings
-      %th Previous holdings
-      %th Market value
-      %th Previous market value
-      %th Pct held
-      %th Pct portfolio
-      %th Market capitalization
-      %th Q0 holding
-      %th Q0 quarter
-      %th Q0 source
-      %th Q1 holding
-      %th Q1 quarter
-      %th Q1 source
-      %th Q2 holding
-      %th Q2 quarter
-      %th Q2 source
-      %th Q3 holding
-      %th Q3 quarter
-      %th Q3 source
-      %th Q4 holding
-      %th Q4 quarter
-      %th Q4 source
-      %th Q5 holding
-      %th Q5 quarter
-      %th Q5 source
-      %th Q6 holding
-      %th Q6 quarter
-      %th Q6 source
-      %th Q7 holding
-      %th Q7 quarter
-      %th Q7 source
-      %th Q8 holding
-      %th Q8 quarter
-      %th Q8 source
-      %th P0 price
-      %th P1 price
-      %th P4 price
-      %th Metro area
-      %th Firm name
-      %th Company name
-      %th Ticker
-      %th Q0 market value
-      %th Qoq net change flow
-      %th Yoy net change flow
-      %th Qoq inflow
-      %th Qoq outflow
-      %th Yoy inflow
-      %th Yoy outflow
-      %th Qoq new positions
-      %th Qoq soldout positions
-      %th Qoq increased positions
-      %th Qoq decreased positions
-      %th Qoq net position change
-      %th Yoy new positions
-      %th Yoy soldout positions
-      %th Yoy increased positions
-      %th Yoy decreased positions
-      %th Yoy net position change
-      %th New positions
-      %th Soldout positions
-      %th Increased positions
-      %th Decreased positions
-      %th Net position change
-      %th Factset security
-      %th Factset entity
+      %th= sortable "Version"
+      %th= sortable "Current holdings"
+      %th= sortable "Previous holdings"
+      %th= sortable "Market value"
+      %th= sortable "Previous market value"
+      %th= sortable "Pct held"
+      %th= sortable "Pct portfolio"
+      %th= sortable "Market capitalization"
+      %th= sortable "Q0 holding"
+      %th= sortable "Q0 quarter"
+      %th= sortable "Q0 source"
+      %th= sortable "Q1 holding"
+      %th= sortable "Q1 quarter"
+      %th= sortable "Q1 source"
+      %th= sortable "Q2 holding"
+      %th= sortable "Q2 quarter"
+      %th= sortable "Q2 source"
+      %th= sortable "Q3 holding"
+      %th= sortable "Q3 quarter"
+      %th= sortable "Q3 source"
+      %th= sortable "Q4 holding"
+      %th= sortable "Q4 quarter"
+      %th= sortable "Q4 source"
+      %th= sortable "Q5 holding"
+      %th= sortable "Q5 quarter"
+      %th= sortable "Q5 source"
+      %th= sortable "Q6 holding"
+      %th= sortable "Q6 quarter"
+      %th= sortable "Q6 source"
+      %th= sortable "Q7 holding"
+      %th= sortable "Q7 quarter"
+      %th= sortable "Q7 source"
+      %th= sortable "Q8 holding"
+      %th= sortable "Q8 quarter"
+      %th= sortable "Q8 source"
+      %th= sortable "P0 price"
+      %th= sortable "P1 price"
+      %th= sortable "P4 price"
+      %th= sortable "Metro area"
+      %th= sortable "Firm name"
+      %th= sortable "Company name"
+      %th= sortable "Ticker"
+      %th= sortable "Q0 market value"
+      %th= sortable "Qoq net change flow"
+      %th= sortable "Yoy net change flow"
+      %th= sortable "Qoq inflow"
+      %th= sortable "Qoq outflow"
+      %th= sortable "Yoy inflow"
+      %th= sortable "Yoy outflow"
+      %th= sortable "Qoq new positions"
+      %th= sortable "Qoq soldout positions"
+      %th= sortable "Qoq increased positions"
+      %th= sortable "Qoq decreased positions"
+      %th= sortable "Qoq net position change"
+      %th= sortable "Yoy new positions"
+      %th= sortable "Yoy soldout positions"
+      %th= sortable "Yoy increased positions"
+      %th= sortable "Yoy decreased positions"
+      %th= sortable "Yoy net position change"
+      %th= sortable "New positions"
+      %th= sortable "Soldout positions"
+      %th= sortable "Increased positions"
+      %th= sortable "Decreased positions"
+      %th= sortable "Net position change"
+      %th= sortable "Factset security"
+      %th= sortable "Factset entity"
       %th
       %th
       %th
@@ -164,3 +164,5 @@
       %br
 
       = link_to 'New Record', new_record_path, class: 'btn btn-primary'
+
+      %p John Meehan 
