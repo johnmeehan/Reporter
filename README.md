@@ -60,11 +60,11 @@ Create page that:
   - [x] Sortable by each column header.
   - [x] This table should only display the most recent version of each record.
 
-- [ ] All data for the table should be pulled directly from ElasticSearch.
+- [x] All data for the table should be pulled directly from ElasticSearch.
 - [x] The table should be paginated to twenty rows per page.
 
-- [ ] Create another page with basic authentication.
-- [ ] This page should allow the user to set what columns display in the table based on the fields available in ElasticSearch.
+- [x] Create another page with basic authentication.
+- [x] This page should allow the user to set what columns display in the table based on the fields available in ElasticSearch.
 
 
 - [x] All times in the csv are in UTC, they should display in Mountain Time and the format:

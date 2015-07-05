@@ -90,20 +90,4 @@ class Record < ActiveRecord::Base
     uniq.pluck(:version).count
   end
 
-  # def self.search(query)
-  # __elasticsearch__.search(
-  #   {
-  #     query: {
-  #       multi_match: {
-  #         query: query,
-  #         fields: ['version']
-  #       }
-  #     },
-  #     highlight: {
-  #       pre_tags: ['<em class="label label-highlight">'],
-  #       post_tags: ['</em>']
-  #     }
-  #   }
-  # )
-  # end
 end
