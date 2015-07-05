@@ -2,13 +2,10 @@
 John Meehan
 
 
-## 1. Cron Job (set to run every 2 hours)
-To view the cron job I set up in config/schedule.rb
+## 1. Cron Job
+view/edit the cron job I set up in config/schedule.rb
 
-run:
-```shell
-whenever
-```
+(set to run every 2 hours)
 
 To write the job to crontab
 ```shell
@@ -26,18 +23,19 @@ crontab -e
 ---
 
 ## 2. To import from CSV via rake task
-Rake Task:  `rake parse_csv`
+```shell
+rake parse_csv
+```
 
-### 3. Defualt Username & Password
+### 3. Default Username & Password
 Username: `admin`
 Password: `password`
 
 
 ### Assumptions!!
   1. Input file for parsing is placed in /lib/input/input.csv
-  2. A new file replaces input.csv
-  3. Cron Job runs the rake task every 2 hours.  (see /config/schedule.rb)
-  4. ElasticSearch is not used for persistence. Just for search and retrieval.
+  2. Cron Job runs the rake task every 2 hours.  (see /config/schedule.rb)
+  3. ElasticSearch is not used for persistence. Just for search and retrieval.
 
 
 
@@ -67,6 +65,5 @@ Create page that:
 - [x] This page should allow the user to set what columns display in the table based on the fields available in ElasticSearch.
 
 
-- [x] All times in the csv are in UTC, they should display in Mountain Time and the format:
-
-December 2, 1986
+- [x] All times in the csv are in UTC,
+- [x] They should display in Mountain Time and the format: December 2, 1986
