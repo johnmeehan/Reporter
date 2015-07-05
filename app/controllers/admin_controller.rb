@@ -6,7 +6,6 @@ class AdminController < ApplicationController
     @columns = Record.record_column_names
   end
 
-
   def set_columns
     if params[:visible]
       session[:visible] ||= {}

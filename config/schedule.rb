@@ -15,7 +15,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-#every 2 hours parse the input csv
+# every 2 hours parse the input csv
 every 2.hours do
-  rake "parse"
+  rake 'parse'
 end

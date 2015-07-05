@@ -2,7 +2,7 @@ module AuthHelper
   def http_login
     user = 'admin'
     pw = 'password'
-    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user,pw)
+    request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user, pw)
   end
 end
 
@@ -16,14 +16,13 @@ module AuthRequestHelper
     @env ||= {}
     user = 'admin'
     pw = 'password'
-    @env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user,pw)
+    @env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials(user, pw)
   end
 end
-
 
 # then in Rspec support:
 
 RSpec.configure do |config|
-  config.include AuthRequestHelper, :type => :request
-  config.include AuthHelper, :type => :controller
+  config.include AuthRequestHelper, type: :request
+  config.include AuthHelper, type: :controller
 end

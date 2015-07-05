@@ -79,15 +79,15 @@ class Record < ActiveRecord::Base
 
   def self.record_column_names
     # @columns = Record.columns_hash.except!(:created_at, :updated_at, :id)
-    self.column_names.reject { |x| ['created_at', 'updated_at', 'id'].include? x}
+    column_names.reject { |x| %w(created_at updated_at id).include? x }
   end
 
   def self.latest_version_number
-    self.search({ filter:{ match_all:{}}, sort:[{version:{ order: 'desc' }}], size: 1 }).to_a.first.version
+    search(filter: { match_all: {} }, sort: [{ version: { order: 'desc' } }], size: 1).to_a.first.version
   end
 
   def self.versions_count
-    self.uniq.pluck(:version).count
+    uniq.pluck(:version).count
   end
 
   # def self.search(query)
