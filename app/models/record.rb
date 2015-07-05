@@ -82,20 +82,28 @@ class Record < ActiveRecord::Base
     self.column_names.reject { |x| ['created_at', 'updated_at', 'id'].include? x}
   end
 
-  def self.search(query)
-  __elasticsearch__.search(
-    {
-      query: {
-        multi_match: {
-          query: query,
-          fields: ['version']
-        }
-      },
-      highlight: {
-        pre_tags: ['<em class="label label-highlight">'],
-        post_tags: ['</em>']
-      }
-    }
-  )
+  def self.latest_version_number
+    self.search({ filter:{ match_all:{}}, sort:[{version:{ order: 'desc' }}], size: 1 }).to_a.first.version
   end
+
+  def self.versions_count
+    self.uniq.pluck(:version).count
+  end
+
+  # def self.search(query)
+  # __elasticsearch__.search(
+  #   {
+  #     query: {
+  #       multi_match: {
+  #         query: query,
+  #         fields: ['version']
+  #       }
+  #     },
+  #     highlight: {
+  #       pre_tags: ['<em class="label label-highlight">'],
+  #       post_tags: ['</em>']
+  #     }
+  #   }
+  # )
+  # end
 end
