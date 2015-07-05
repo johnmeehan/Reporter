@@ -12,4 +12,8 @@
         .well
           %h1 Admin Area - Record Column Visiblity
           =link_to 'Back to records', root_path, class: 'btn btn-primary'
-    = yield
+      .row
+        .col-md-6
+          = yield
+
+    = render 'layouts/development_info'

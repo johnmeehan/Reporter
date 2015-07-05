@@ -1,100 +1,10 @@
 %h4.text-center
   = paginate @records
 
--# = session[:visible].inspect
-
-%table.table.table-striped.table-hover.table-condended.table-bordered
-  %thead
-    %tr
-    - @columns.each do |column|
-      %th= sortable column if session[:visible][column] == true
-    %th
-    %th
-    %th
-
-  %tbody
-    - @records.each do |record|
-      %tr
-        - @columns.each do |row_column|
-          -unless session[:visible][row_column] == false
-            %td= display_as record.send(row_column)
-            -# -else
-            -#   %td= record.send(row_column)
-
-        -# %td= record.version
-        -# %td= record.current_holdings
-        -# %td= record.previous_holdings
-        -# %td= record.market_value
-        -# %td= record.previous_market_value
-        -# %td= record.pct_held
-        -# %td= record.pct_portfolio
-        -# %td= record.market_capitalization
-        -# %td= record.q0_holding
-        -# %td= display_date record.q0_quarter
-        -# %td= record.q0_source
-        -# %td= record.q1_holding
-        -# %td= display_date record.q1_quarter
-        -# %td= record.q1_source
-        -# %td= record.q2_holding
-        -# %td= display_date record.q2_quarter
-        -# %td= record.q2_source
-        -# %td= record.q3_holding
-        -# %td= display_date record.q3_quarter
-        -# %td= record.q3_source
-        -# %td= record.q4_holding
-        -# %td= display_date record.q4_quarter
-        -# %td= record.q4_source
-        -# %td= record.q5_holding
-        -# %td= display_date record.q5_quarter
-        -# %td= record.q5_source
-        -# %td= record.q6_holding
-        -# %td= display_date record.q6_quarter
-        -# %td= record.q6_source
-        -# %td= record.q7_holding
-        -# %td= display_date(record.q7_quarter)
-        -# %td= record.q7_source
-        -# %td= record.q8_holding
-        -# %td= display_date record.q8_quarter
-        -# %td= record.q8_source
-        -# %td= record.p0_price
-        -# %td= record.p1_price
-        -# %td= record.p4_price
-        -# %td= record.metro_area
-        -# %td= record.firm_name
-        -# %td= record.company_name
-        -# %td= record.ticker
-        -# %td= record.q0_market_value
-        -# %td= record.qoq_net_change_flow
-        -# %td= record.yoy_net_change_flow
-        -# %td= record.qoq_inflow
-        -# %td= record.qoq_outflow
-        -# %td= record.yoy_inflow
-        -# %td= record.yoy_outflow
-        -# %td= record.qoq_new_positions
-        -# %td= record.qoq_soldout_positions
-        -# %td= record.qoq_increased_positions
-        -# %td= record.qoq_decreased_positions
-        -# %td= record.qoq_net_position_change
-        -# %td= record.yoy_new_positions
-        -# %td= record.yoy_soldout_positions
-        -# %td= record.yoy_increased_positions
-        -# %td= record.yoy_decreased_positions
-        -# %td= record.yoy_net_position_change
-        -# %td= record.new_positions
-        -# %td= record.soldout_positions
-        -# %td= record.increased_positions
-        -# %td= record.decreased_positions
-        -# %td= record.net_position_change
-        -# %td= record.factset_security_id
-        -# %td= record.factset_entity_id
-        %td= link_to 'Show', record
-        %td= link_to 'Edit', edit_record_path(record)
-        %td= link_to 'Destroy', record, :method => :delete, :data => { :confirm => 'Are you sure?' }
+= render 'layouts/table'
 .container
   .row
     %h4
-      %br
-      = paginate @records
       %br
 
       = link_to 'New Record', new_record_path, class: 'btn btn-primary'

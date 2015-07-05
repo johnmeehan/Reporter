@@ -1,2 +1,11 @@
-%h1 Admin#index
-%p Find me in app/views/admin/index.html.haml
+%h1 Select Columns To Display
+
+= form_tag admin_set_columns_path, method: :put do
+  %table.table.table-striped.table-hover.table-condended.table-bordered#permissions.table{:cellspacing => "0"}
+    %tbody
+      - @columns.each do |name|
+        %tr
+          %td= name
+          %td= check_box(session[:visible], session[:visible][:"#{name}"] == true)
+
+  = submit_tag 'Update' , class: 'btn btn-default btn-primary'

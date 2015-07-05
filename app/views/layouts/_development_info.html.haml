@@ -1,0 +1,10 @@
+- if Rails.env.development?
+  .well
+    %b Session:
+    %br
+    = session[:visible].inspect
+    %hr
+    %br
+    %b Params:
+    %br
+    = params.inspect

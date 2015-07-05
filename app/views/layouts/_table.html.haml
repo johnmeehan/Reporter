@@ -1,0 +1,19 @@
+%table.table.table-striped.table-hover.table-condended.table-bordered
+  %thead
+    %tr
+    - @columns.each do |column|
+      - if session[:visible][column] == true
+        %th= sortable column
+    %th
+    %th
+    %th
+  %tbody
+    - @records.each do |record|
+      %tr
+        - @columns.each do |row_column|
+          -if session[:visible][row_column] == true
+            %td= display_as record.send(row_column)
+
+        %td= link_to 'Show', record
+        %td= link_to 'Edit', edit_record_path(record)
+        %td= link_to 'Destroy', record, :method => :delete, :data => { :confirm => 'Are you sure?' }

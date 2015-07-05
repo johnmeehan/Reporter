@@ -10,7 +10,7 @@
     .container
       .row
         .well
-          %h1 Reporter - Records
+          %h1 Records
           %h5
             =@version_count if @version_count
             Versions
@@ -18,5 +18,6 @@
             Latest Version:
             =@latestversion if @latestversion
             %br
-            =link_to 'Admin', admin_index_path, class: 'btn btn-primary'
+            =link_to 'Select Columns', admin_index_path, class: 'btn btn-primary'
     = yield
+    = render 'layouts/development_info'
