@@ -5,21 +5,9 @@ class RecordsController < ApplicationController
   def index
     get_column_names
     set_visabilty
-
     version_info
-    # Working
-    # response = Record.where(version: @latestversion).order(sort_column + ' ' + sort_direction ).page(params[:page]).per(20)
-
-    @records = Record.search(query: {
-                               match: {
-                                 version: {
-                                   query: @latestversion
-                                 }
-                               }
-                             },
-                             sort: {
-                               "#{sort_column}": "#{sort_direction}"
-                             }).page(params[:page]).per(20).records
+    # @records = Record.where(version: @latestversion).order(sort_column + ' ' + sort_direction ).page(params[:page]).per(20)
+    @records = Record.reports_search(@latestversion, sort_column, sort_direction).page(params[:page]).per(20).records
   end
 
   def show
@@ -66,11 +54,9 @@ class RecordsController < ApplicationController
   def version_info
     if Record.any?
       @version_count = Record.versions_count
-      # @latestversion = Record.uniq.order("version DESC").first.version
       @latestversion = Record.latest_version_number
     else
-      @version_count = 0
-      @latestversion = 0
+      @latestversion = @version_count = 0
     end
   end
 
@@ -96,7 +82,6 @@ class RecordsController < ApplicationController
       @columns.each do |col|
         session[:visible][col.to_sym] = true
       end
-      # session[:visible].except!(:created_at, :updated_at, :id)
     end
   end
 

@@ -77,17 +77,11 @@ class Record < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-  def self.record_column_names
-    # @columns = Record.columns_hash.except!(:created_at, :updated_at, :id)
-    column_names.reject { |x| %w(created_at updated_at id).include? x }
-  end
+  scope :versions_count, -> { uniq.pluck(:version).count }
+  scope :record_column_names, -> { column_names.reject { |x| %w(created_at updated_at id).include? x }}
+  scope :latest_version_number, ->{ search(filter: { match_all: {} }, sort: [{ version: { order: 'desc' } }], size: 1).to_a.first.version }
 
-  def self.latest_version_number
-    search(filter: { match_all: {} }, sort: [{ version: { order: 'desc' } }], size: 1).to_a.first.version
+  def self.reports_search(latest_ver, sort_col, sort_dir)
+    search(query: { match: { version: { query: latest_ver } } }, sort: { "#{sort_col}": "#{sort_dir}" })
   end
-
-  def self.versions_count
-    uniq.pluck(:version).count
-  end
-
 end
