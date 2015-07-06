@@ -24,7 +24,7 @@ crontab -e
 
 ## 2. To import from CSV via rake task
 ```shell
-rake parse_csv
+rake parse
 ```
 
 ### 3. Default Username & Password
