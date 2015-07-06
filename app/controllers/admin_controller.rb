@@ -16,6 +16,18 @@ class AdminController < ApplicationController
     redirect_to root_url
   end
 
+  def show
+    column = params[:format]
+    session[:visible][column] = true
+    redirect_to admin_index_path
+  end
+
+  def hide
+    column = params[:format]
+    session[:visible][column] = false
+    redirect_to admin_index_path
+  end
+
   private
 
   def visibiltiy_params
