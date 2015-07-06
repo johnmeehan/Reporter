@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Hide Columns", type: :feature do
+RSpec.feature 'Hide Columns', type: :feature do
   before do
     basic_auth('admin', 'password')
   end
@@ -18,6 +18,6 @@ RSpec.feature "Hide Columns", type: :feature do
 
     expect(page).to_not have_content 'version'
     expect(page).to_not have_content 'current_holdings'
+    expect(page).to have_content 'market_value'
   end
-
 end
