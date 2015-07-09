@@ -60,6 +60,7 @@ gem 'factory_girl_rails'
 group :development, :test do
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
+  gem 'poltergeist', '~> 1.6.0'
 end
 
 gem 'shoulda-matchers', group: :test

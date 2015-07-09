@@ -1,4 +1,5 @@
-
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
 require 'simplecov'
 SimpleCov.start 'rails'
 

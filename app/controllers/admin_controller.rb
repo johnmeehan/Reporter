@@ -8,6 +8,7 @@ class AdminController < ApplicationController
   def toggle
     toggle_session_param
     respond_to do |format|
+      # format.html{ render :index, locals:{ name: @col }}
       format.js { render layout: false }
     end
   end

@@ -5,7 +5,7 @@ RSpec.feature 'Hide Columns', type: :feature do
     basic_auth('admin', 'password')
   end
 
-  scenario 'User can hide table columns' do
+  scenario 'User can hide table columns', js: true do
     visit root_path
     click_link 'Select Columns'
     expect(page).to have_content 'Select Columns'

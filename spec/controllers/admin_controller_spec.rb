@@ -21,24 +21,21 @@ RSpec.describe AdminController, type: :controller do
   end
 
 
-  describe 'toggle' do
+  describe 'toggle', :js => true do
     before(:each) do
       session[:visible] = {}
-      # session[:visible]['version'] = true
+      expect(session[:visible]).to be_empty
     end
     it 'sets a visible session key and value' do
       session[:visible]['somekey'] = 1234
       expect(session[:visible]['somekey']).to eq 1234
     end
 
-    it 'toggle a columns visability in the sesson' do
-      get :toggle, { col_name: 'version' }, { visible: {:'version' => true}}
+    it 'toggle a columns visability in the sesson',:js => true do
+      # get :toggle, { col_name: 'version' }, { visible: {:'version' => true}}
+      get :toggle, { col_name: 'version' }
       expect(session[:visible][:'version']).to be_falsey
     end
 
-    it 'toggle a columns visability in the sesson' do
-      get :toggle, { col_name: 'market_value' }, { visible: {:'market_value' => false}}
-      expect(session[:visible]['market_value']).to eq true
-    end
   end
 end
