@@ -77,13 +77,17 @@ class Record < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-  # scope :versions, -> { search(aggs: { versions_count: { cardinality: { field: "version" } } }).to_a }
   scope :versions_count, -> {  search(aggs: { versions_count: { cardinality: { field: "version" } } }).response[:aggregations][:versions_count][:value] }
-  # scope :versions_count, -> { uniq.pluck(:version).count }
-  scope :record_column_names, -> { column_names.reject { |x| %w(created_at updated_at id).include? x }}
   scope :latest_version_number, ->{ search(filter: { match_all: {} }, sort: [{ version: { order: 'desc' } }], size: 1).to_a.first.version }
 
   def self.reports_search(latest_ver, sort_col, sort_dir)
     search(query: { match: { version: { query: latest_ver } } }, sort: { "#{sort_col}": "#{sort_dir}" })
+  end
+
+  def self.record_column_names
+    cache_key = "record_column_names"
+    Rails.cache.fetch("#{cache_key}", expires_in: 12.hours) do
+      column_names.reject { |x| %w(created_at updated_at id).include? x }
+    end
   end
 end
