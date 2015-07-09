@@ -77,7 +77,9 @@ class Record < ActiveRecord::Base
   include Elasticsearch::Model
   include Elasticsearch::Model::Callbacks
 
-  scope :versions_count, -> { uniq.pluck(:version).count }
+  # scope :versions, -> { search(aggs: { versions_count: { cardinality: { field: "version" } } }).to_a }
+  scope :versions_count, -> {  search(aggs: { versions_count: { cardinality: { field: "version" } } }).response[:aggregations][:versions_count][:value] }
+  # scope :versions_count, -> { uniq.pluck(:version).count }
   scope :record_column_names, -> { column_names.reject { |x| %w(created_at updated_at id).include? x }}
   scope :latest_version_number, ->{ search(filter: { match_all: {} }, sort: [{ version: { order: 'desc' } }], size: 1).to_a.first.version }
 

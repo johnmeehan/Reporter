@@ -1,0 +1,4 @@
+%td
+  = name
+%td
+  = link_to "#{link_name_toggle(name)}", admin_toggle_path(col_name: name ), remote: true, data: {disable_with: "Toggling...."}, id: "#{name}_link"

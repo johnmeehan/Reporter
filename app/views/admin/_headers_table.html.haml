@@ -1,0 +1,5 @@
+%table.table.table-striped.table-hover.table-condended.table-bordered#permissions.table{:cellspacing => "0"}
+  %tbody
+    - @columns.each do |name|
+      %tr{:id => name}
+        = render 'column', name: name

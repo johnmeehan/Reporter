@@ -1,13 +1,5 @@
 %h1 Select Columns To Display
 
-%table.table.table-striped.table-hover.table-condended.table-bordered#permissions.table{:cellspacing => "0"}
-  %tbody
-    - @columns.each do |name|
-      %tr
-        %td= name
-        -if session[:visible][name] == true
-          %td= link_to "hide #{name}", admin_hide_path(name)
-        -else
-          %td= link_to "show #{name}", admin_show_path(name)
+= render 'headers_table'
 
 = link_to 'Update Table', root_path,  class: 'btn btn-default btn-primary'

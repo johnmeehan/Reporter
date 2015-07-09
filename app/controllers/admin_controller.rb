@@ -5,21 +5,23 @@ class AdminController < ApplicationController
     @columns = Record.record_column_names
   end
 
-  def show
-    column = params[:format]
-    session[:visible][column] = true
-    redirect_to admin_index_path
-  end
-
-  def hide
-    column = params[:format]
-    session[:visible][column] = false
-    redirect_to admin_index_path
+  def toggle
+    toggle_session_param
+    respond_to do |format|
+      format.js { render layout: false }
+    end
   end
 
   private
 
-  def visibiltiy_params
-    params.require(:visible).permit!
-  end
+    def visibiltiy_params
+      params.require(:visible).permit!
+      params.permit(:col_name).permit!
+    end
+
+    def toggle_session_param
+        @col = params[:col_name]
+        # if its somehow not set now it will
+        session[:visible][@col] = session[:visible][@col] == false ? true : false
+    end
 end
