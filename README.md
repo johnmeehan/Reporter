@@ -1,6 +1,12 @@
 # Reporter
 John Meehan
-
+## Quick Setup Procedure
+1. `git clone https://github.com/johnmeehan/Reporter.git`
+2. `cd Reporter`
+3. `rake db:setup`
+4. `rake parse`
+5. `rake cronjob`
+6. `rails s`
 
 ## 1. Cron Job
 view/edit the cron job I set up in config/schedule.rb
