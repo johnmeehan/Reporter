@@ -1,0 +1,12 @@
+#dashboard
+  .well
+    %h1 Records
+    %h5
+      =@version_count if @version_count
+      Versions
+      %br
+      Latest Version:
+      =@latestversion if @latestversion
+      %br
+      =link_to 'Select Columns', admin_index_path, class: 'btn btn-primary'            
+      =link_to 'Run Import Background Job', import_records_path, id: 'import-button',class: 'btn btn-success', remote: true, data: { disable_with: "<i class='glyphicon glyphicon-refresh glyphicon-refresh-animate'></i> Importing..."}  

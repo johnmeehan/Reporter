@@ -73,3 +73,7 @@ Create page that:
 
 - [x] All times in the csv are in UTC,
 - [x] They should display in Mountain Time and the format: December 2, 1986
+
+
+# Off Piste
+- Added a Button on the Records display table, that when pressed launches via ajax a DelayedJob with ActiveJob to run the Rake task for importing from the CSV report.

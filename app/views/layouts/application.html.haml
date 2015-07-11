@@ -9,15 +9,6 @@
   %body
     .container
       .row
-        .well
-          %h1 Records
-          %h5
-            =@version_count if @version_count
-            Versions
-            %br
-            Latest Version:
-            =@latestversion if @latestversion
-            %br
-            =link_to 'Select Columns', admin_index_path, class: 'btn btn-primary'
+        = render 'layouts/dashboard'
     = yield
     -# = render 'layouts/development_info'

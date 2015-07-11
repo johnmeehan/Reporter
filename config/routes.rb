@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     get 'toggle'
   end
 
-  resources :records
+  resources :records do
+  	get 'import', on: :collection
+  end
   root 'records#index'
 end

@@ -46,6 +46,15 @@ class RecordsController < ApplicationController
     end
   end
 
+  def import
+    ImportCsvJob.perform_later
+    # sleep 3.seconds
+    version_info
+    respond_to do |format|
+      format.js { render layout: false}
+    end
+  end
+
   private
 
     def version_info
